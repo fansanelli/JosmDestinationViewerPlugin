@@ -1,0 +1,4 @@
+.settings
+lib/*.jar
+src/main/java/dev/pengunaria
+target
