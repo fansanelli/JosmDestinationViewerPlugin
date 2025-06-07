@@ -1,12 +1,42 @@
-This project depends on: https://github.com/fansanelli/OsmDestinationViewer
+# JosmDestinationViewerPlugin
 
-Copy "josm-latest.jar" in the "lib" folder.
+This project depends on: [OsmDestinationViewer](https://github.com/fansanelli/OsmDestinationViewer)
 
-To build you need Maven and run: 
+## Cloning the project with submodules
 
-`mvn clean package`
+To clone this repository and automatically fetch the required submodule, run:
 
-In the "target" folder you will find the jar with all the dependencies.
+```sh
+git clone --recurse-submodules https://github.com/fansanelli/JosmDestinationViewerPlugin.git
+```
 
-Copy it in ~/.local/share/JOSM/plugins
+If you have already cloned the repository without submodules, initialize and update them with:
+
+```sh
+git submodule update --init --recursive
+```
+
+## Building
+
+1. Download the file `josm-latest.jar` and place it in the `lib` folder.
+2. Make sure you have [Maven](https://maven.apache.org/) installed.
+3. Build the project with:
+
+```sh
+mvn clean package
+```
+
+The resulting jar with all dependencies will be in the `target` folder.
+
+## Installing the plugin in JOSM
+
+Copy the generated jar from `target/` to your JOSM plugins directory, for example:
+
+```sh
+cp target/josmdestinationviewer-0.0.1-SNAPSHOT.jar ~/.local/share/JOSM/plugins/
+```
+
+---
+
+For any issues or contributions, please refer to the repository or open an issue.
 

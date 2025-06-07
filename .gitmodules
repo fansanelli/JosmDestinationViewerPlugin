@@ -1,0 +1,3 @@
+[submodule "external/OsmDestinationViewer"]
+	path = external/OsmDestinationViewer
+	url = https://github.com/fansanelli/OsmDestinationViewer.git

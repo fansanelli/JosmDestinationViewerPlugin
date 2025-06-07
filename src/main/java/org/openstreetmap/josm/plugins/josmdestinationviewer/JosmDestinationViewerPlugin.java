@@ -20,7 +20,7 @@ import org.openstreetmap.josm.plugins.Plugin;
 import org.openstreetmap.josm.plugins.PluginInformation;
 import org.w3c.dom.Document;
 
-import dev.pengunaria.osmdestinationviewer.OsmDestinationViewer;
+import main.java.dev.pengunaria.osmdestinationviewer.OsmDestinationViewer;
 
 public class JosmDestinationViewerPlugin extends Plugin implements DataSelectionListener {
 	public JosmDestinationViewerPlugin(PluginInformation info) {
