@@ -20,11 +20,19 @@ git submodule update --init --recursive
 
 1. Download the file `josm-latest.jar` and place it in the `lib` folder.
 2. Make sure you have [Maven](https://maven.apache.org/) installed.
-3. Build the project with:
+3. **Build and install the OsmDestinationViewer dependency locally:**
 
-```sh
-mvn clean package
-```
+   ```sh
+   cd external/OsmDestinationViewer
+   mvn clean install
+   cd ../..
+   ```
+
+4. Build the main project with:
+
+   ```sh
+   mvn clean package
+   ```
 
 The resulting jar with all dependencies will be in the `target` folder.
 

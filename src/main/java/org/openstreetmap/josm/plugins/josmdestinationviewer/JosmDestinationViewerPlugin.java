@@ -101,7 +101,7 @@ public class JosmDestinationViewerPlugin extends Plugin {
 			}
 			JPanel panel = new JPanel(new BorderLayout());
 			panel.add(svgCanvas, BorderLayout.CENTER);
-			JOptionPane.showMessageDialog(MainApplication.getMainFrame(), panel, "SVG Viewer",
+			JOptionPane.showMessageDialog(MainApplication.getMainFrame(), panel, "JOSM Destination Viewer",
 					JOptionPane.PLAIN_MESSAGE);
 		}
 
