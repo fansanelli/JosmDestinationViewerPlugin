@@ -41,7 +41,7 @@ The resulting jar with all dependencies will be in the `target` folder.
 Copy the generated jar from `target/` to your JOSM plugins directory, for example:
 
 ```sh
-cp target/josmdestinationviewer-0.0.1-SNAPSHOT.jar ~/.local/share/JOSM/plugins/
+cp target/josmdestinationviewer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ~/.local/share/JOSM/plugins/
 ```
 
 ---
