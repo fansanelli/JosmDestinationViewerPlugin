@@ -38,5 +38,7 @@ cp target/josmdestinationviewer-0.0.1-SNAPSHOT.jar ~/.local/share/JOSM/plugins/
 
 ---
 
+**Disclaimer:** JOSM and OpenStreetMap are trademarks of their respective owners. This project is not affiliated with or endorsed by the JOSM or OpenStreetMap projects.
+
 For any issues or contributions, please refer to the repository or open an issue.
 

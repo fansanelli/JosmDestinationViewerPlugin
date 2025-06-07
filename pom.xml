@@ -97,16 +97,24 @@
         </configuration>
       </plugin>
     </plugins>
-    <!--
     <resources>
       <resource>
         <directory>${project.basedir}</directory>
         <includes>
-          <include>myicon</include>
+          <include>LICENSE</include>
         </includes>
+        <filtering>false</filtering>
+        <targetPath>license/josmdestinationviewer</targetPath>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/external/OsmDestinationViewer</directory>
+        <includes>
+          <include>LICENSE</include>
+        </includes>
+        <filtering>false</filtering>
+        <targetPath>license/osmdestinationviewer</targetPath>
       </resource>
     </resources>
-    -->
   </build>
 
   <!-- ATTENZIONE: mancano i sorgenti per osm-destination-viewer, per ragioni di licenza li lasciamo in un repo separato. -->
