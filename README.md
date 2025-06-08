@@ -2,6 +2,15 @@
 
 This project depends on: [OsmDestinationViewer](https://github.com/fansanelli/OsmDestinationViewer)
 
+## Usage
+
+Once the plugin is installed:
+1. Select an object (node or way) from the map that contains a destination=* tag or related.
+2. Go to the top menu bar and click on Tools → View destination.
+3. A dialog will appear displaying a road sign-style rendering of the destination tag.
+
+> ⚠️ You must select exactly one object with a valid destination tag for the plugin to work.
+
 ## Cloning the project with submodules
 
 To clone this repository and automatically fetch the required submodule, run:
