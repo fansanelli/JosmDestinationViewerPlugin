@@ -24,6 +24,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.io.StringReader;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JMenu;
@@ -40,6 +41,9 @@ import org.openstreetmap.josm.gui.MainMenu;
 import org.openstreetmap.josm.gui.Notification;
 import org.openstreetmap.josm.plugins.Plugin;
 import org.openstreetmap.josm.plugins.PluginInformation;
+import org.openstreetmap.josm.tools.Logging;
+import org.openstreetmap.josm.tools.TaginfoRegionalInstance;
+import org.openstreetmap.josm.tools.Territories;
 import org.w3c.dom.Document;
 
 import main.java.dev.pengunaria.osmdestinationviewer.OsmDestinationViewer;
@@ -51,6 +55,8 @@ public class JosmDestinationViewerPlugin extends Plugin {
 		JMenu jToolmenu = MainApplication.getMenu().toolsMenu;
 		jToolmenu.addSeparator();
 		MainMenu.add(jToolmenu, new MainAction("View destination"));
+
+		Territories.initialize();
 	}
 
 	private static class MainAction extends JosmAction implements DataSelectionListener {
@@ -74,9 +80,13 @@ public class JosmDestinationViewerPlugin extends Plugin {
 
 			OsmPrimitive primitive = selection.iterator().next();
 			Map<String, String> tags = primitive.getKeys();
+			List<TaginfoRegionalInstance> regionalTaginfoUrls = Territories
+					.getRegionalTaginfoUrls(primitive.getBBox().getCenter());
+			String isoCode = (!regionalTaginfoUrls.isEmpty() && !regionalTaginfoUrls.get(0).getIsoCodes().isEmpty()) ? regionalTaginfoUrls.get(0).getIsoCodes().iterator().next()
+					: null;
+			Logging.debug(String.format("JosmDestinationViewerPlugin: using isoCode %s", isoCode));
 			try {
-				// TODO Ask JOSM the country code
-				String svgContent = new OsmDestinationViewer(tags, "IT").getSvg();
+				String svgContent = new OsmDestinationViewer(tags, isoCode).getSvg();
 				showSvgPanel(svgContent);
 			} catch (Exception e) {
 				new Notification(e.getMessage()).setIcon(JOptionPane.ERROR_MESSAGE).setDuration(Notification.TIME_LONG)

@@ -12,8 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -55,11 +55,17 @@
               <mainClass>org.openstreetmap.josm.plugins.josmdestinationviewer.JosmDestinationViewer</mainClass>
             </manifest>
             <manifestEntries>
-              <Plugin-Mainversion>12164</Plugin-Mainversion>
+              <!-- The lowest JOSM version required by this plugin. -->
+              <Plugin-Mainversion>18700</Plugin-Mainversion>
+              <!-- The plugin version -->
               <Plugin-Version>0.0.1-SNAPSHOT</Plugin-Version>
+              <!-- Points to the main class of the plugin -->
               <Plugin-Class>org.openstreetmap.josm.plugins.josmdestinationviewer.JosmDestinationViewerPlugin</Plugin-Class>
+              <!-- Gives the description of the plugin visible in the preferences page -->
               <Plugin-Description>This plugin allows to render the road sign from destination tag.</Plugin-Description>
+              <!-- The name and or email address of the author of this plugin -->
               <Author>fansanelli</Author>
+              <!-- Should be set to true if the plugin can be installed without restart -->
               <Plugin-Canloadatruntime>true</Plugin-Canloadatruntime>
             </manifestEntries>
           </archive>
@@ -76,25 +82,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.3.0</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>org.openstreetmap.josm.plugins.josmdestinationviewer.JosmDestinationViewer</mainClass>
-            </manifest>
-            <manifestEntries>
-              <Plugin-Main-Version>25001</Plugin-Main-Version>
-              <Plugin-Author>fansanelli</Plugin-Author>
-              <Plugin-Class>org.openstreetmap.josm.plugins.josmdestinationviewer.JosmDestinationViewerPlugin</Plugin-Class>
-              <Plugin-Description>This plugin allows to render the road sign from destination tag.</Plugin-Description>
-              <Plugin-Canloadatruntime>true</Plugin-Canloadatruntime>
-            </manifestEntries>
-          </archive>
-        </configuration>
       </plugin>
     </plugins>
     <resources>
@@ -116,6 +103,4 @@
       </resource>
     </resources>
   </build>
-
-  <!-- ATTENZIONE: mancano i sorgenti per osm-destination-viewer, per ragioni di licenza li lasciamo in un repo separato. -->
 </project>
