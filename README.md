@@ -1,12 +1,20 @@
 # JosmDestinationViewerPlugin
 
-This project depends on: [OsmDestinationViewer](https://github.com/fansanelli/OsmDestinationViewer)
+A plugin for [JOSM](https://josm.openstreetmap.de/), the Java-based editor for OpenStreetMap.  
+**JosmDestinationViewer** renders road sign-style based on the `destination=*` tag of OSM elements.
+
+This is useful for mappers who want to visually verify or adjust `destination` tags on roads, junctions, and ramps, particularly for navigation purposes or for enhancing data quality.
+
+The plugin uses [OsmDestinationViewer](https://github.com/fansanelli/OsmDestinationViewer) as its rendering engine and automatically adapts the road sign style based on the selected element.
 
 ## Usage
 
 Once the plugin is installed:
-1. Select an object (node or way) from the map that contains a destination=* tag or related.
+
+1. Select an object (node or way) from the map that contains a `destination=*` tag or related.
+
 2. Go to the top menu bar and click on Tools → View destination.
+
 3. A dialog will appear displaying a road sign-style rendering of the destination tag.
 
 > ⚠️ You must select exactly one object with a valid destination tag for the plugin to work.
